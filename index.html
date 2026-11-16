@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>For Nathasha — A Little Surprise From Your Best Friend!</title>
+<meta name="description" content="For Nathasha — a little surprise from Rohit for his best friend Nathasha.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div id="floatLayer"></div>
+  </div>
+  <div id="cursorSparkles" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="logo">For Nathasha</div>
+    <div class="top-right">
+      <ol class="progress" id="progress" aria-label="Progress">
+        <li data-step="1" class="active"><span>1</span><em>Surprise</em></li>
+        <li data-step="2"><span>2</span><em>Letter</em></li>
+        <li data-step="3"><span>3</span><em>Coming soon</em></li>
+        <li data-step="4"><span>4</span><em>Test</em></li>
+      </ol>
+      <button class="btn-ghost" id="restartBtn" type="button" title="Start again">↺ Restart</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1 · LANDING -->
+    <section class="screen active" id="screen-landing" aria-label="Landing">
+      <div class="card landing-card">
+        <p class="badge">✨ A SPECIAL SURPRISE</p>
+        <h1>Sun Nathasha! <span class="heart-beat">❤️</span></h1>
+        <p class="subtitle">Your best friend Rohit has prepared something special for you...</p>
+        <p class="warning">Warning: Thodi bakchodi hone wali hai! 😂</p>
+
+        <button class="envelope" id="envelopeBtn" type="button" aria-label="Open the envelope">
+          <span class="env-body">
+            <span class="env-letter">💌</span>
+            <span class="env-heart">❤️</span>
+          </span>
+          <span class="env-flap"></span>
+          <span class="env-seal">💗</span>
+        </button>
+        <p class="env-hint">Envelope par tap karo 👆</p>
+
+        <button class="btn-primary glow" id="openBtn" type="button">OPEN YOUR SURPRISE 💌</button>
+        <p class="made-by">Made with ❤️ by Rohit</p>
+      </div>
+    </section>
+
+    <!-- 2 · LETTER -->
+    <section class="screen" id="screen-letter" aria-label="Letter">
+      <div class="card letter-card">
+        <p class="badge">💌 AREY NATHASHA, YE TERE LIYE HAI 😂❤️</p>
+        <h2>Sun Nathasha! <span class="heart-beat">❤️</span></h2>
+        <div class="letter-body">
+          <p>Achha sun Nathasha 😂❤️</p>
+          <p>Ab tu soch rahi hogi ki Rohit ne ye kya naya kaand kar diya.</p>
+          <p>Toh madam, tere liye kuch banane ka mann kiya, isliye bana di ye website.</p>
+          <p>Ab isme kitna dimaag laga hai wo toh mat hi puchna 😂</p>
+          <p>Bas aage dekhte ja, tere liye kuch questions hain aur kuch surprises bhi.</p>
+          <p>Aur haan, zyada attitude mat dikhana! 😏</p>
+        </div>
+        <div class="burst" id="burst" aria-hidden="true"></div>
+        <button class="btn-primary glow" id="startBtn" type="button">ACHA CHAL, DEKHTE HAIN 😂</button>
+        <button class="btn-ghost" id="backBtn" type="button">← Wapas landing par</button>
+      </div>
+    </section>
+
+    <!-- 3 · LOADING -->
+    <section class="screen" id="screen-loading" aria-label="Loading">
+      <div class="card loading-card">
+        <div class="hearts-loader" aria-hidden="true"><span>💗</span><span>💖</span><span>💗</span></div>
+        <h2>Setting up Nathasha's special experience...</h2>
+        <p class="subtitle">Thoda sa wait, madam — kuch cute load ho raha hai ✨</p>
+        <div class="loadbar"><div class="loadbar-fill" id="loadFill"></div></div>
+        <p class="load-pct" id="loadPct">0%</p>
+      </div>
+    </section>
+
+    <!-- 4 · PLACEHOLDER (Phase 2 ready) -->
+    <section class="screen" id="screen-coming" aria-label="Coming soon">
+      <div class="card coming-card">
+        <p class="big-emoji">👀</p>
+        <h2>Something interesting is coming, Nathasha!</h2>
+        <p class="subtitle">Good news, madam — Phase 2 aa gaya hai! Funny questions aur leg-pulling ready hai 😂</p>
+        <div class="coming-actions">
+          <button class="btn-primary glow" id="challengeBtn" type="button">START NATHASHA'S TEST 😎</button>
+          <button class="btn-ghost" id="replayBtn" type="button">↺ Phir se dekho</button>
+          <button class="btn-ghost" id="readAgainBtn" type="button">💌 Letter phir se padho</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · PHASE 2 WELCOME -->
+    <section class="screen" id="screen-challenge" aria-label="Challenge welcome">
+      <div class="card challenge-card">
+        <p class="badge">😂 NATHASHA'S FUNNY CHALLENGE</p>
+        <h2>Welcome to Nathasha's Test! 😂</h2>
+        <p class="subtitle">Let's see how well you know yourself, madam!</p>
+        <p class="prepared">Prepared by your best friend Rohit ❤️</p>
+        <p class="quiz-note">7 funny questions · Ek baar mein ek · Koi galat jawab nahi, bas bakchodi 😂</p>
+        <button class="btn-primary glow" id="startTestBtn" type="button">START MY TEST 😎</button>
+        <button class="btn-ghost" id="challengeBackBtn" type="button">← Pehle wala screen</button>
+      </div>
+    </section>
+
+    <!-- 6 · PHASE 2 QUIZ -->
+    <section class="screen" id="screen-quiz" aria-label="Quiz">
+      <div class="card quiz-card">
+        <p class="q-count" id="quizCount">Question 1 of 7</p>
+        <div class="quizbar"><div class="quizbar-fill" id="quizFill"></div></div>
+        <h2 id="quizQuestion">Question</h2>
+        <div class="options" id="quizOptions"></div>
+        <div class="reaction" id="quizReaction" role="status" aria-live="polite"></div>
+        <button class="btn-ghost" id="quizRestartBtn" type="button">↺ Challenge restart karo</button>
+      </div>
+    </section>
+
+    <!-- 7 · PHASE 2 RESULT -->
+    <section class="screen" id="screen-result" aria-label="Result">
+      <div class="card result-card">
+        <p class="big-emoji">🎉</p>
+        <h2>Bas Nathasha, bahut ho gaya! 😂</h2>
+        <p class="subtitle">7 questions pooch liye, ab Rohit ki class mat lagana. Itni mehnat se banayi hai ye website!</p>
+        <p class="subtitle">Your Friendship Personality Report is Ready!</p>
+        <p class="fun-note">⚠️ Ye report sirf mazaak ke liye hai — Rohit ne khud banayi hai 😂</p>
+        <div class="stats" id="resultStats"></div>
+        <p class="final-msg">Congratulations Nathasha! You have officially passed Rohit ki Bakchodi Test! 😂❤️</p>
+        <div class="coming-actions">
+          <button class="btn-primary glow" id="unlockBtn" type="button">CHALO AAGE DEKHTE HAIN 😂</button>
+          <button class="btn-ghost" id="retakeBtn" type="button">↺ Test dobara do</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · PHASE 3: COMPATIBILITY CALCULATOR -->
+    <section class="screen" id="screen-compat" aria-label="Compatibility calculator">
+      <div class="card compat-card">
+        <!-- Entry -->
+        <div class="compat-panel active" id="compatEntry">
+          <p class="badge">💗 ROHIT &amp; NATHASHA COMPATIBILITY</p>
+          <h2>Chalo ab compatibility check karte hain! 😂</h2>
+          <p class="subtitle">Dekhte hain Rohit aur Nathasha ki jodi kitni interesting hai.</p>
+          <div class="name-cards">
+            <div class="name-card"><span class="name-emoji">😎</span><b>ROHIT</b><span class="name-heart">❤️</span></div>
+            <div class="name-plus">+</div>
+            <div class="name-card"><span class="name-emoji">👑</span><b>NATHASHA</b><span class="name-heart">💗</span></div>
+          </div>
+          <button class="btn-primary glow" id="compatCalcBtn" type="button">CALCULATE KARO 👀</button>
+          <button class="btn-ghost" id="compatBackBtn" type="button">← Result wapas dekho</button>
+        </div>
+        <!-- Calculation -->
+        <div class="compat-panel" id="compatCalc">
+          <div class="hearts-loader" aria-hidden="true"><span>💗</span><span>💖</span><span>💗</span></div>
+          <h2>Compatibility calculate ho rahi hai...</h2>
+          <p class="compat-pct" id="compatPct">0%</p>
+          <div class="loadbar"><div class="loadbar-fill" id="compatFill"></div></div>
+          <p class="compat-msg" id="compatMsg">Rohit ka data check ho raha hai...</p>
+        </div>
+        <!-- Result -->
+        <div class="compat-panel" id="compatResult">
+          <p class="big-emoji">💗</p>
+          <h2>Rohit aur Nathasha ki report aa gayi! 😂</h2>
+          <p class="compat-score" id="compatScore">--%</p>
+          <p class="compat-band" id="compatBand"></p>
+          <div class="stats" id="compatStats"></div>
+          <p class="fun-note">⚠️ Ye calculator sirf mazaak ke liye hai — Rohit ne khud banaya hai 😂</p>
+          <p class="final-msg">Waise calculator kuch bhi bole, asli compatibility toh tum dono hi jaante ho.</p>
+          <div class="coming-actions">
+            <button class="btn-primary glow" id="compatAgainBtn" type="button">EK AUR BAAR CHECK KARO 🔄</button>
+            <button class="btn-primary" id="compatNextBtn" type="button">NEXT SURPRISE 🎁</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 · PHASE 4 PLACEHOLDER (not built yet) -->
+    <section class="screen" id="screen-next" aria-label="Next surprise">
+      <div class="card coming-card">
+        <p class="big-emoji">🎁</p>
+        <h2>Phase 4 surprise is coming soon, Nathasha!</h2>
+        <p class="subtitle">Phase 4 abhi ban raha hai — Rohit kuch aur plan kar raha hai 👀<br>Tab tak apni compatibility report sambhal ke rakhna 😂</p>
+        <div class="coming-actions">
+          <button class="btn-primary" id="nextBackBtn" type="button">← Compatibility report wapas dekho</button>
+          <button class="btn-ghost" id="nextRestartBtn" type="button">↺ Shuru se dekho</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Designed with ❤️ by Rohit</p>
+    <p>Specially made for Nathasha — Best Friends Forever! 😂</p>
+    <p class="tagline">“A Little Surprise From Your Best Friend!”</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
